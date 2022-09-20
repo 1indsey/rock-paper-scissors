@@ -1,3 +1,5 @@
+//psudocode
+
 // define variable computerChoice
 // computerChoice should be a random number (either 1, 2, or 3)
 // assign each output a number 1, 2 or 3 (rock = 1, paper = 2, scissors = 3)
@@ -5,6 +7,37 @@
 // if computerChoice is 1, output Rock
 // if computerChoice is 2, output Paper
 // if computerChoice is 3, output Scissors
+
+//play a single round
+//prompt user for choice
+//player chooses rock, paper, or scissors
+//should be case insensitive
+//define variable that is the player's choice
+//computer chooses rock, paper, or scissors
+//[if player choice equals computer choice
+//tie]
+//[if player chooses rock, CPU chooses paper OR
+//if player chooses paper, CPU chooses scissors OR
+//if player chooses scissors, CPU chooses rock
+//player loses]
+//[if player chooses rock, CPU chooses scissors OR
+//if player chooses paper, CPU chooses rock OR
+//if player chooses scissors, CPU chooses paper OR
+//player wins]
+
+//play 1 round
+//announce result of round
+//define playerScore
+//define computerScore
+//if singleround result == win
+// +1 to playerScore
+//if singleRound result == lose
+// +1 to computer score
+//repeat until 5 rounds have been played
+// if playerScore > computerScore
+// announce You are the winner!
+// if playerScore < computerScore
+// announce You are the loser!
 
 let computerChoice;
 
@@ -34,23 +67,6 @@ if (computerChoice === 1) {
 //getComputerChoice()
 
 //console.log('Computer choice: ' + computerSelection)
-
-//play a single round
-//prompt user for choice
-//player chooses rock, paper, or scissors
-//should be case insensitive
-//define variable that is the player's choice
-//computer chooses rock, paper, or scissors
-//[if player choice equals computer choice
-//tie]
-//[if player chooses rock, CPU chooses paper OR
-//if player chooses paper, CPU chooses scissors OR
-//if player chooses scissors, CPU chooses rock
-//player loses]
-//[if player chooses rock, CPU chooses scissors OR
-//if player chooses paper, CPU chooses rock OR
-//if player chooses scissors, CPU chooses paper OR
-//player wins]
 
 
 //let playerSelection = prompt("Rock, paper, scissors, SHOOT! Type your choice", 'ROCK');
@@ -134,17 +150,4 @@ function announceResults() {
 
 announceResults()
 
-//play 1 round
-//announce result of round
-//define playerScore
-//define computerScore
-//if singleround result == win
-// +1 to playerScore
-//if singleRound result == lose
-// +1 to computer score
-//repeat until 5 rounds have been played
-// if playerScore > computerScore
-// announce You are the winner!
-// if playerScore < computerScore
-// announce You are the loser!
 
