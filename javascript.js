@@ -64,17 +64,6 @@ if (computerChoice === 1) {
 }
 }
 
-//getComputerChoice()
-
-//console.log('Computer choice: ' + computerSelection)
-
-
-//let playerSelection = prompt("Rock, paper, scissors, SHOOT! Type your choice", 'ROCK');
-//console.log(playerSelection);
-
-//let uppercasePlayerSelection = playerSelection.toUpperCase();
-//console.log(uppercasePlayerSelection);
-
 let playerScore = 0;
 
 let computerScore = 0;
