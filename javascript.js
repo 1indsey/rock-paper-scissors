@@ -1,76 +1,72 @@
-//psudocode
-
-// define variable computerChoice
-// computerChoice should be a random number (either 1, 2, or 3)
-// assign each output a number 1, 2 or 3 (rock = 1, paper = 2, scissors = 3)
-// make function getComputerChoice
-// if computerChoice is 1, output Rock
-// if computerChoice is 2, output Paper
-// if computerChoice is 3, output Scissors
-
-//play a single round
-//prompt user for choice
-//player chooses rock, paper, or scissors
-//should be case insensitive
-//define variable that is the player's choice
-//computer chooses rock, paper, or scissors
-//[if player choice equals computer choice
-//tie]
-//[if player chooses rock, CPU chooses paper OR
-//if player chooses paper, CPU chooses scissors OR
-//if player chooses scissors, CPU chooses rock
-//player loses]
-//[if player chooses rock, CPU chooses scissors OR
-//if player chooses paper, CPU chooses rock OR
-//if player chooses scissors, CPU chooses paper OR
-//player wins]
-
-//play 1 round
-//announce result of round
-//define playerScore
-//define computerScore
-//if singleround result == win
-// +1 to playerScore
-//if singleRound result == lose
-// +1 to computer score
-//repeat until 5 rounds have been played
-// if playerScore > computerScore
-// announce You are the winner!
-// if playerScore < computerScore
-// announce You are the loser!
-
 let computerChoice;
 
 function randomNumber() {
     computerChoice = Math.floor(Math.random() * (3 - 1 + 1) + 1);
- // console.log(computerChoice);
+  console.log(computerChoice);
 }
 
-randomNumber();
+//randomNumber();
 
 let computerSelection
 
 function getComputerChoice() {
 if (computerChoice === 1) {
-   //console.log('CC: ROCK');
+   console.log('CC: ROCK');
     computerSelection = 'ROCK';
 } else if (computerChoice === 2) {
-   //console.log('CC: PAPER');
+   console.log('CC: PAPER');
     computerSelection = 'PAPER';
 } else {
-  //  console.log('CC: SCISSORS');
+    console.log('CC: SCISSORS');
     computerSelection = 'SCISSORS';
     
 }
-}
+};
+
+//getComputerChoice();
 
 let playerScore = 0;
 
 let computerScore = 0;
 
+let playerSelection = 'none';
+
+const rockbtn = document.getElementById('rock');
+rockbtn.addEventListener('click', () => {
+    playerSelection = 'ROCK';
+    singleRound();
+ });
+
+const paperbtn = document.querySelector('#paper');
+paperbtn.addEventListener('click', () => {
+    playerSelection = 'PAPER';
+    singleRound();
+ });
+
+const scissorsbtn = document.querySelector('#scissors');
+scissorsbtn.addEventListener('click', () => {
+    playerSelection = 'SCISSORS';
+    singleRound();
+ });
+
+//const btn = document.querySelectorAll('button');
+//btn.forEach((btn) => {
+//btn.addEventListener("click", singleRound);
+//})
+
+//function functionTest() {
+//    alert('Function test working');
+//};
+
 function singleRound() {
-    let playerSelection = prompt("Rock, paper, scissors, SHOOT! Type your choice", 'ROCK');
-//console.log(playerSelection);
+ //   let playerSelection = prompt("Rock, paper, scissors, SHOOT! Type your choice", 'ROCK');
+ //  rockbtn.onclick = function() {
+ //  playerSelection = 'ROCK';
+ //  };
+console.log(playerSelection);
+
+randomNumber();
+getComputerChoice();
 
 let uppercasePlayerSelection = playerSelection.toUpperCase();
 console.log('Your choice: ' + uppercasePlayerSelection);
@@ -106,10 +102,12 @@ console.log('Computer choice: ' + computerSelection);
         return "lose";
     } else {
      console.log("That's not an option! Try again");
-     singleRound();
+     //singleRound();
      return "invalidAnswer";
     }
     }
+
+  //singleRound();
 
 // console.log(singleRound());
  //console.log('Your score: ' + playerScore);
@@ -125,7 +123,7 @@ console.log('Computer choice: ' + computerSelection);
  }
 }
 
-game();
+//game();
 
 function announceResults() {
     if (playerScore > computerScore) {
@@ -137,6 +135,6 @@ function announceResults() {
     }
 }
 
-announceResults()
+//announceResults()
 
 
