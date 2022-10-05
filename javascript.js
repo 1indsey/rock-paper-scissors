@@ -1,3 +1,5 @@
+const results = document.querySelector('.results');
+
 let computerChoice;
 
 function randomNumber() {
@@ -64,16 +66,22 @@ scissorsbtn.addEventListener('click', () => {
 //        singleRound();
 // })});
 
-//function functionTest() {
+
 //    alert('Function test working');
 //};
+
+
+const displayedPlayerSelection = document.createElement('p');
+
 
 function singleRound() {
  //   let playerSelection = prompt("Rock, paper, scissors, SHOOT! Type your choice", 'ROCK');
  //  rockbtn.onclick = function() {
  //  playerSelection = 'ROCK';
  //  };
-console.log(playerSelection);
+//console.log(playerSelection);
+displayedPlayerSelection.textContent = playerSelection;
+results.appendChild(displayedPlayerSelection);
 
 randomNumber();
 getComputerChoice();
@@ -112,7 +120,7 @@ console.log('Computer choice: ' + computerSelection);
         return "lose";
     } else {
      console.log("That's not an option! Try again");
-     //singleRound();
+     singleRound();
      return "invalidAnswer";
     }
     }
