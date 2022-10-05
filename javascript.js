@@ -9,20 +9,23 @@ function randomNumber() {
 
 //randomNumber();
 
+const displayedComputerSelection = document.createElement('p');
+
 let computerSelection
 
 function getComputerChoice() {
 if (computerChoice === 1) {
-   console.log('CC: ROCK');
+  // console.log('CC: ROCK');
     computerSelection = 'ROCK';
 } else if (computerChoice === 2) {
-   console.log('CC: PAPER');
+ //  console.log('CC: PAPER');
     computerSelection = 'PAPER';
 } else {
-    console.log('CC: SCISSORS');
+  //  console.log('CC: SCISSORS');
     computerSelection = 'SCISSORS';
-    
 }
+displayedComputerSelection.textContent = `Computer choice: ${computerSelection}`;
+results.appendChild(displayedComputerSelection);
 };
 
 //getComputerChoice();
@@ -72,6 +75,7 @@ scissorsbtn.addEventListener('click', () => {
 
 
 const displayedPlayerSelection = document.createElement('p');
+const singleRoundResults = document.createElement('p');
 
 
 function singleRound() {
@@ -80,7 +84,7 @@ function singleRound() {
  //  playerSelection = 'ROCK';
  //  };
 //console.log(playerSelection);
-displayedPlayerSelection.textContent = playerSelection;
+displayedPlayerSelection.textContent = `Your choice: ${playerSelection}`;
 results.appendChild(displayedPlayerSelection);
 
 randomNumber();
@@ -92,34 +96,50 @@ console.log('Your choice: ' + uppercasePlayerSelection);
 console.log('Computer choice: ' + computerSelection);
 
     if (uppercasePlayerSelection === computerSelection) {
-        console.log("It's a tie! Play again");
+        singleRoundResults.textContent = "It's a tie! Play again";
+        results.appendChild(singleRoundResults);
+       // console.log("It's a tie! Play again");
         return "tie";
     } else if (uppercasePlayerSelection === 'ROCK' && computerSelection === 'SCISSORS') {
-        console.log('You win this round! Rock beats scissors');
+        singleRoundResults.textContent = "You win this round! Rock beats scissors";
+        results.appendChild(singleRoundResults);
+        //console.log('You win this round! Rock beats scissors');
         playerScore += 1;
         return "win";
     } else if (uppercasePlayerSelection === 'PAPER' && computerSelection === 'ROCK') {
-        console.log('You win this round! Paper beats rock');
+        singleRoundResults.textContent = "You win this round! Paper beats rock";
+        results.appendChild(singleRoundResults);
+        //console.log('You win this round! Paper beats rock');
         playerScore += 1;
         return "win";
     } else if (uppercasePlayerSelection === 'SCISSORS' && computerSelection === 'PAPER') {
-        console.log('You win this round! Scissors beats paper');
+        singleRoundResults.textContent = "You win this round! Scissors beats paper";
+        results.appendChild(singleRoundResults);
+        //console.log('You win this round! Scissors beats paper');
         playerScore += 1;
         return "win";
     } else if (uppercasePlayerSelection === 'ROCK' && computerSelection === 'PAPER') {
-        console.log('You lose this round! Paper beats rock');
+        singleRoundResults.textContent = "You lose this round! Paper beats rock";
+        results.appendChild(singleRoundResults);
+        //console.log('You lose this round! Paper beats rock');
         computerScore += 1;
         return "lose";
     } else if (uppercasePlayerSelection === 'PAPER' && computerSelection === 'SCISSORS') {
-        console.log('You lose this round! Scissors beats paper');
+        singleRoundResults.textContent = "You lose this round! Scissors beats paper";
+        results.appendChild(singleRoundResults);
+        //console.log('You lose this round! Scissors beats paper');
         computerScore += 1;
         return "lose";
     } else if (uppercasePlayerSelection === 'SCISSORS' && computerSelection === 'ROCK') {
-        console.log('You lose this round! Rock beats scissors');
+        singleRoundResults.textContent = "You lose this round! Rock beats scissors";
+        results.appendChild(singleRoundResults);
+      //  console.log('You lose this round! Rock beats scissors');
         computerScore += 1;
         return "lose";
     } else {
-     console.log("That's not an option! Try again");
+        singleRoundResults.textContent = "That's not an option! Try again";
+        results.appendChild(singleRoundResults);   
+     //console.log("That's not an option! Try again");
      singleRound();
      return "invalidAnswer";
     }
