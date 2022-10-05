@@ -51,8 +51,18 @@ scissorsbtn.addEventListener('click', () => {
 
 //const btn = document.querySelectorAll('button');
 //btn.forEach((btn) => {
-//btn.addEventListener("click", singleRound);
-//})
+//btn.addEventListener("click", () => {
+//    rockbtn.onclick = function() { !!THIS ISN'T WORKING!!
+//        playerSelection = 'ROCK'; 
+//    }
+//    paperbtn.onclick = function() {
+//        playerSelection = 'PAPER';
+//    }
+//    scissorsbtn.onclick = function() {
+//        playerSelection = 'SCISSORS';
+//    }
+//        singleRound();
+// })});
 
 //function functionTest() {
 //    alert('Function test working');
@@ -136,5 +146,3 @@ function announceResults() {
 }
 
 //announceResults()
-
-
