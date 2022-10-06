@@ -155,7 +155,8 @@ console.log('Computer choice: ' + computerSelection);
  //console.log('Computer score: ' + computerScore);
 
  const displayedPlayerScore = document.createElement('p');
- const displayedComputerScore = document.createElement('p')
+ const displayedComputerScore = document.createElement('p');
+ const finalResults = document.createElement('h3');
 
  function game() {
    // for (let i = 0; i < 5; i++) {
@@ -203,10 +204,3 @@ function announceResults() {
 //announce a winner when one player reaches 5 points
 //while playerScore = 5, announce "You're the winner!"
 //while computerScore = 5, announce "You're the loser!"
-
-const finalResults = document.createElement('h3');
-
-if (playerScore >= 5) {
-    finalResults.textContent = "You're the winner!";
-    results.appendChild(finalResults);
-};
