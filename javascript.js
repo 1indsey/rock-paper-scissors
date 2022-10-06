@@ -39,19 +39,22 @@ let playerSelection = 'none';
 const rockbtn = document.getElementById('rock');
 rockbtn.addEventListener('click', () => {
     playerSelection = 'ROCK';
-    singleRound();
+   // singleRound();
+    game();
  });
 
 const paperbtn = document.querySelector('#paper');
 paperbtn.addEventListener('click', () => {
     playerSelection = 'PAPER';
-    singleRound();
+   // singleRound();
+   game();
  });
 
 const scissorsbtn = document.querySelector('#scissors');
 scissorsbtn.addEventListener('click', () => {
     playerSelection = 'SCISSORS';
-    singleRound();
+    //singleRound();
+    game();
  });
 
 //const btn = document.querySelectorAll('button');
@@ -142,7 +145,7 @@ console.log('Computer choice: ' + computerSelection);
      //console.log("That's not an option! Try again");
      singleRound();
      return "invalidAnswer";
-    }
+    } 
     }
 
   //singleRound();
@@ -151,14 +154,36 @@ console.log('Computer choice: ' + computerSelection);
  //console.log('Your score: ' + playerScore);
  //console.log('Computer score: ' + computerScore);
 
+ const displayedPlayerScore = document.createElement('p');
+ const displayedComputerScore = document.createElement('p')
+
  function game() {
-    for (let i = 0; i < 5; i++) {
-        randomNumber();
-        getComputerChoice();
+   // for (let i = 0; i < 5; i++) {
+        //randomNumber();
+        //getComputerChoice();
         singleRound();
-        console.log('Your score: ' + playerScore);
-        console.log('Computer score: ' + computerScore);
+        displayedPlayerScore.textContent = `Your score: ${playerScore}`;
+        results.appendChild(displayedPlayerScore);  
+       // console.log('Your score: ' + playerScore);
+       displayedComputerScore.textContent = `Computer score: ${computerScore}`;
+        results.appendChild(displayedComputerScore);
+        //console.log('Computer score: ' + computerScore);
+        if (playerScore >= 5) {
+            finalResults.textContent = "You're the winner!";
+            results.appendChild(finalResults);
+            resetScores();
+        };
+        if (computerScore >= 5) {
+            finalResults.textContent = "You're the loser!";
+            results.appendChild(finalResults);
+            resetScores();
+        }
  }
+//}
+
+function resetScores() {
+    playerScore = 0;
+    computerScore = 0;
 }
 
 //game();
@@ -174,3 +199,14 @@ function announceResults() {
 }
 
 //announceResults()
+
+//announce a winner when one player reaches 5 points
+//while playerScore = 5, announce "You're the winner!"
+//while computerScore = 5, announce "You're the loser!"
+
+const finalResults = document.createElement('h3');
+
+if (playerScore >= 5) {
+    finalResults.textContent = "You're the winner!";
+    results.appendChild(finalResults);
+};
